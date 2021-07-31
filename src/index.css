@@ -1,13 +1,104 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;1,300&display=swap');
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Poppins', sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.ProseMirror{
+  padding: 1rem 0;
+  margin: 1rem 0;
+  outline: none;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+	content: 'Tell your Story...';
+	float: left;
+	color: #969595;
+	pointer-events: none;
+	height: 0;
+}
+.ProseMirror a {
+	color: #1d4ed8;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.ProseMirror img{
+  max-width: 20rem;
+  height: auto;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.ProseMirror .ProseMirror-selectednode {
+  outline: 2px solid green;
+}
+
+/* Main Container */
+.main-wrapper{
+  padding: 1rem;
+  background-color: lavender;
+  text-align: left;
+  max-width: 50rem;
+  margin: auto;
+}
+
+/* Editor */
+.editor-wrapper{
+  margin: 2rem 0;
+}
+/* Editing Options container */
+.editing-options-container{
+  
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+/* Navbar */
+.nav-wrapper{
+  border-bottom: 1px solid grey;
+  text-align: left;
+}
+/* Formatting Buttons */
+
+.btn-styling{
+  padding: 0.25rem 0.5rem;
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  min-width:2rem;
+  border-radius: 4px;
+  background-color: rgb(216, 216, 216);
+  border: none;
+  cursor: pointer;
+}
+.btn-bold{
+  font-weight: bolder;
+}
+.btn-italic{
+  font-style: italic;
+}
+.btn-underline{
+  text-decoration: underline;
+}
+
+.add-image-btn,.add-meme-btn{
+  min-width:5.5rem;
+  background-color: green;
+  color: white;
+}
+
+/* Modal */
+
+.modal-wrapper{
+  text-align: center;
+  width: 20rem;
+  height: 10rem;
+  padding: 0.5rem;
+  position: absolute;
+  top: 50%;  
+  left: 50%;
+  transform: translate(-50%,-50%);  
 }
