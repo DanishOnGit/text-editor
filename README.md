@@ -1,1 +1,1 @@
-# A Rich Text Editor
+# A rich text editor
