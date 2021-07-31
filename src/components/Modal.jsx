@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const AddLinkModal = ({
+export const Modal = ({
   editor,
   showModal,
   setShowModal,

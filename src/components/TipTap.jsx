@@ -4,25 +4,40 @@ import Placeholder from "@tiptap/extension-placeholder";
 import Underline from "@tiptap/extension-underline";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
+import { useState } from "react";
+import { Guide } from "./Guide";
+import { Menu } from "./Menu";
 import { EditorOptionsContainer } from "./textFormattingOptions";
 
-
 export const TipTap = () => {
+  const [isWriting, setIsWriting] = useState(true);
   const editor = useEditor({
     extensions: [StarterKit, Placeholder, Link, Image, Underline],
     autofocus: "end",
   });
-  if(!editor){
+  if (!editor) {
     return null;
   }
 
   return (
     <>
-    <div className="editor-wrapper">
-    <EditorOptionsContainer editor={editor}/>
-      <EditorContent editor={editor} />
-    </div>
-     
+      <div className="editor-wrapper">
+        <Menu editor={editor} isWriting={isWriting} setIsWriting={setIsWriting}/>
+        {isWriting ? <EditorContent editor={editor} /> : <Guide />}
+{/*        
+        {isWriting ? (
+          <div>
+            {" "}
+            <EditorOptionsContainer
+              editor={editor}
+              setIsWriting={setIsWriting}
+            />
+            <EditorContent editor={editor} />
+          </div>
+        ) : (
+          <Guide />
+        )} */}
+      </div>
     </>
   );
 };
