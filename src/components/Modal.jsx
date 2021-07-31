@@ -1,11 +1,6 @@
 import { useState } from "react";
 
-export const Modal = ({
-  editor,
-  showModal,
-  setShowModal,
-  modalType,
-}) => {
+export const Modal = ({ editor, showModal, setShowModal, modalType }) => {
   const [url, setUrl] = useState("");
 
   const addUrl = () => {
@@ -19,21 +14,33 @@ export const Modal = ({
     setShowModal("");
   };
   return (
-    <div className={`modal-wrapper ${showModal}`}>
-      <div>
-        <span>{modalType}</span>
-        <button onClick={() => setShowModal("")}>X</button>
+    <>
+      <div className={`modal-wrapper ${showModal}`}>
+        <div className="modal-content-wrapper">
+          <div>
+            <span className="modal-title">{modalType}</span>
+            <button className="close-btn" onClick={() => setShowModal("")}>
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div>
+            <input
+              className="url-input"
+              value={url}
+              type="text"
+              onChange={(e) => setUrl(e.target.value)}
+            />
+          </div>
+          <div>
+            <button
+              className="add-link-btn"
+              onClick={modalType === "Add image link here" ? addImage : addUrl}
+            >
+              Add
+            </button>
+          </div>
+        </div>
       </div>
-      <div>
-        <input value={url} type="text" onChange={(e) => setUrl(e.target.value)} />
-      </div>
-      <div>
-        <button
-          onClick={modalType === "Add image link here" ? addImage : addUrl}
-        >
-          Add
-        </button>
-      </div>
-    </div>
+    </>
   );
 };

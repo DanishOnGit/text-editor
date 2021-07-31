@@ -7,7 +7,6 @@ import StarterKit from "@tiptap/starter-kit";
 import { useState } from "react";
 import { Guide } from "./Guide";
 import { Menu } from "./Menu";
-import { EditorOptionsContainer } from "./textFormattingOptions";
 
 export const TipTap = () => {
   const [isWriting, setIsWriting] = useState(true);

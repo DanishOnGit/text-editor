@@ -1,5 +1,4 @@
-import { EditorContent } from "@tiptap/react";
-import { Guide } from "./Guide";
+
 import { EditorOptionsContainer } from "./textFormattingOptions";
 
 export const Menu = ({ editor, isWriting, setIsWriting }) => {
