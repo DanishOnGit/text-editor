@@ -10,12 +10,19 @@ import { EditorOptionsContainer } from "./textFormattingOptions";
 export const TipTap = () => {
   const editor = useEditor({
     extensions: [StarterKit, Placeholder, Link, Image, Underline],
+    autofocus: "end",
   });
+  if(!editor){
+    return null;
+  }
 
   return (
     <>
-      <EditorOptionsContainer/>
+    <div className="editor-wrapper">
+    <EditorOptionsContainer editor={editor}/>
       <EditorContent editor={editor} />
+    </div>
+     
     </>
   );
 };

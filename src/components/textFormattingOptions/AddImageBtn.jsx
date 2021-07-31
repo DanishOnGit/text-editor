@@ -1,13 +1,11 @@
-export const AddImageBtn = ({editor}) => {
+export const AddImageBtn = ({editor,setShowModal,setModalType}) => {
   const addImage = () => {
-    const url = window.prompt("enter image url");
-    if (url) {
-      editor.chain().focus().setImage({ src: url }).run();
-    }
+    setShowModal("show");
+    setModalType("Add image link here")
   };
   return (
-    <button className="btn-styling add-image-btn" onClick={addImage}>
-      Add Image
+    <button className="btn-styling" onClick={addImage}>
+     <i class="fas fa-image"></i>
     </button>
   );
 };
