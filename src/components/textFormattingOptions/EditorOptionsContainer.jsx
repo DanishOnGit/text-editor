@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { Modal } from "../Modal";
 import { AddImageBtn } from "./AddImageBtn";
 import { AddMemeBtn } from "./AddMemeBtn";
 import { TextStyleButtons } from "./TextStyleButtons";
 
-export const EditorOptionsContainer = ({ editor, setIsWriting }) => {
-  const [showModal, setShowModal] = useState("");
-  const [modalType, setModalType] = useState("");
+export const EditorOptionsContainer = ({
+  setShowModal,
+  setModalType,
+  editor,
+}) => {
   return (
     <>
       <div className="editing-options-container">
@@ -22,12 +22,6 @@ export const EditorOptionsContainer = ({ editor, setIsWriting }) => {
         />
         <AddMemeBtn editor={editor} />
       </div>
-      <Modal
-        editor={editor}
-        showModal={showModal}
-        setShowModal={setShowModal}
-        modalType={modalType}
-      />
     </>
   );
 };
