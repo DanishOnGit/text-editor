@@ -6,6 +6,13 @@ It is a rich text editor where user can format text, add images and memes as wel
 
 Live url: https://fluid-editor.netlify.app/
 
+### Demo:
+
+
+https://user-images.githubusercontent.com/65118743/127772408-3ba7f2e6-1670-44f8-8e52-66c5bb47aa52.mp4
+
+
+
 ### Tech Stack
 
 - ReactJS
