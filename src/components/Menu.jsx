@@ -1,10 +1,6 @@
-import { useState } from "react";
-import { Modal } from "./Modal";
 import { EditorOptionsContainer } from "./textFormattingOptions";
 
 export const Menu = ({ editor, isWriting, setIsWriting }) => {
-  const [showModal, setShowModal] = useState("");
-  const [modalType, setModalType] = useState("");
   return (
     <>
       <div className="menu-bar">
@@ -23,22 +19,8 @@ export const Menu = ({ editor, isWriting, setIsWriting }) => {
             <i class="far fa-life-ring"></i> Guide
           </span>
         </div>
-        {isWriting ? (
-          <EditorOptionsContainer
-            setShowModal={setShowModal}
-            setModalType={setModalType}
-            editor={editor}
-          />
-        ) : (
-          <div></div>
-        )}
+        {isWriting ? <EditorOptionsContainer editor={editor} /> : <div></div>}
       </div>
-      <Modal
-        editor={editor}
-        showModal={showModal}
-        setShowModal={setShowModal}
-        modalType={modalType}
-      />
     </>
   );
 };

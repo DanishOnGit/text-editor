@@ -198,7 +198,7 @@
 .modal-wrapper {
   display: none;
   text-align: center;
-  position: absolute;
+  position: fixed;
   inset: 0;
   background-color: var(--overlay-color);
   z-index: var(--z-02);
