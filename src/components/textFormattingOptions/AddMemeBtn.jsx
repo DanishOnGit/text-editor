@@ -23,19 +23,22 @@ export const AddMemeBtn = ({ editor }) => {
   const getAndAddMemeInEditorContent = async () => {
     //here we get the html as string from editor content
     const editorContent = editor.getHTML();
-    const regexPattern = /\{\{([A-Za-z]+)_meme\}\}/;
+    const regexPattern = /\{\{(.+?)_meme\}\}/;
     //here result will be array and we get the subgroup at array[1]
     const result = regexPattern.exec(editorContent);
-    const imageElement = await searchMeme(result[1]);
-
-    if (imageElement) {
-      //now we replace the regex pattern with "" in the editor content
-      let newContent = editorContent.replace(result[0], "");
-      newContent += imageElement;
-      //and here we update the editor content
-      editor.commands.setContent(newContent);
-    } else {
-      alert("No meme found. Try a different keyword!");
+    if (result) {
+      const imageElement = await searchMeme(result[1]);
+      if (imageElement) {
+        //now we replace the regex pattern with "" in the editor content
+        let newContent = editorContent.replace(result[0], "");
+        newContent += imageElement;
+        //and here we update the editor content
+        editor.commands.setContent(newContent);
+      } else {
+        alert("No meme found. Try a different keyword!");
+      }
+    }else{
+      alert("Please refer the Guide to enter a valid pattern to add meme !")
     }
   };
 

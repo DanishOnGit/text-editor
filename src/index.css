@@ -44,7 +44,7 @@
 }
 
 .ProseMirror .ProseMirror-selectednode {
-  outline: 2px solid var(--pri-color);
+  outline: 3px solid var(--pri-color);
 }
 
 /* Main Container */
