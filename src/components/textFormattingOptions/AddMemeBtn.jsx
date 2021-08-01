@@ -41,11 +41,11 @@ export const AddMemeBtn = ({ editor }) => {
   return (
     <>
       <button
-        className="btn-styling"
+        className="btn-styling add-meme-btn"
         onClick={searchEditorContent}
       >
         <i class="fas fa-plus"></i> Meme
-        {/* <img src="https://img.icons8.com/color/48/000000/trollface.png" height={30} width={30}/> */}
+        
       </button>
     </>
   );

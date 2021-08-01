@@ -23,19 +23,7 @@ export const TipTap = () => {
       <div className="editor-wrapper">
         <Menu editor={editor} isWriting={isWriting} setIsWriting={setIsWriting}/>
         {isWriting ? <EditorContent editor={editor} /> : <Guide />}
-{/*        
-        {isWriting ? (
-          <div>
-            {" "}
-            <EditorOptionsContainer
-              editor={editor}
-              setIsWriting={setIsWriting}
-            />
-            <EditorContent editor={editor} />
-          </div>
-        ) : (
-          <Guide />
-        )} */}
+
       </div>
     </>
   );

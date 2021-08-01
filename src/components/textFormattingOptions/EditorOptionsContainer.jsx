@@ -21,13 +21,14 @@ export const EditorOptionsContainer = ({ editor, setIsWriting }) => {
           setModalType={setModalType}
         />
         <AddMemeBtn editor={editor} />
-        <Modal
+        
+      </div>
+      <Modal
           editor={editor}
           showModal={showModal}
           setShowModal={setShowModal}
           modalType={modalType}
         />
-      </div>
     </>
   );
 };

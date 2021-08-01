@@ -1,9 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
+}
+:root {
+  --pri-color: rgb(15, 76, 159);
+  --grey-color: rgb(26, 26, 26);
+  --overlay-color: rgba(43, 42, 42, 0.342);
+  --z-99: 99;
 }
 
 .ProseMirror {
@@ -20,7 +26,7 @@
   height: 0;
 }
 .ProseMirror a {
-  color: #1d4ed8;
+  color: var(--pri-color);
   text-decoration: underline;
   cursor: pointer;
 }
@@ -37,45 +43,52 @@
 }
 
 .ProseMirror .ProseMirror-selectednode {
-  outline: 2px solid green;
+  outline: 2px solid var(--pri-color);
 }
 
 /* Main Container */
 .main-wrapper {
-  padding: 1rem;
+  padding: 0 1rem;
   text-align: left;
-  max-width: 50rem;
   margin: auto;
 }
 
 /* Editor */
 .editor-wrapper {
   margin: 2rem 0;
+  max-width: 50rem;
+  margin: auto;
 }
 
 /* Menu */
 .menu-bar {
-  padding: 0.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-radius: 3px;
-  box-shadow: 0px 0px 9px 0px rgba(158, 160, 158, 0.5);
   min-height: 3.9rem;
 }
 .mode-wrapper {
   flex: 1;
 }
+
 .mode {
   cursor: pointer;
   margin: 0 1rem;
+  color: var(--grey-color);
+}
+.mode-active {
+  color: var(--pri-color);
+  font-weight: 700;
+}
+.mode:first-child {
+  margin-left: 0;
 }
 /* Editing Options container */
 .editing-options-container {
   flex: 2;
   padding: 0.5rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 @media (max-width: 556px) {
@@ -91,8 +104,19 @@
 }
 /* Navbar */
 .nav-wrapper {
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid var(--pri-color);
   text-align: left;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+.brand {
+  font-size: 3rem;
+}
+.fluid {
+  color: var(--pri-color);
+}
+.editor {
+  color: var(--pri-color);
 }
 /* Formatting Buttons */
 .text-style-btns-wrapper {
@@ -107,16 +131,36 @@
   font-size: 1.1rem;
   font-weight: 700;
   background-color: transparent;
+  color: var(--grey-color);
   border: none;
   cursor: pointer;
+  position: relative;
 }
+.tooltip-text {
+  position: absolute;
+  background-color: var(--grey-color);
+  color: white;
+  padding: 0.2rem 0.5rem;
+  font-weight: 400;
+  font-size: 0.8rem;
+  top: 2rem;
+  left: 0;
+  display: none;
+  margin-top: 0.3rem;
+  border-radius: 4px;
+}
+@media (min-width: 556px) {
+  .btn-styling:hover .tooltip-text {
+    display: block;
+  }
+}
+
 .btn-styling:hover {
   background-color: rgba(218, 218, 218, 0.733);
 }
 .btn-styling.isActive:hover {
   background-color: black;
 }
-
 .btn-italic {
   font-style: italic;
   margin-left: -0.25rem;
@@ -125,11 +169,15 @@
   text-decoration: underline;
 }
 
-.add-image-btn,
 .add-meme-btn {
+  display: inline-block;
   min-width: 5.5rem;
-  background-color: green;
-  color: white;
+  color: var(--grey-color);
+}
+@media (max-width: 556px) {
+  .add-meme-btn {
+    padding: 0.2rem 0.1rem;
+  }
 }
 .isActive {
   background-color: black;
@@ -140,15 +188,10 @@
 .modal-wrapper {
   display: none;
   text-align: center;
-  width: 100vw;
-  height: 100vh;
-
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(43, 42, 42, 0.342);
-  z-index: 99;
+  inset: 0;
+  background-color: var(--overlay-color);
+  z-index: var(--z-99);
 }
 
 .modal-wrapper.show {
@@ -160,7 +203,7 @@
 .modal-content-wrapper {
   position: relative;
   background-color: white;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 .modal-title {
   font-size: 1.2rem;
@@ -175,7 +218,7 @@
 }
 .add-link-btn {
   padding: 0.35rem 1rem;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   background-color: black;
   color: white;
   border: none;
@@ -187,12 +230,12 @@
   top: 0.5rem;
   right: 0.5rem;
   background-color: transparent;
-  padding: 0.2rem;
+  padding: 0.2rem 0.35rem;
   border: none;
   cursor: pointer;
 }
 .close-btn:hover {
-  background-color: grey;
+  background-color: var(--overlay-color);
 }
 
 /* Guide */
@@ -200,18 +243,26 @@
 .btn {
   background-color: rgb(206, 206, 206);
 }
-.btn.btn-styling{
-  cursor:default;
+.btn.btn-styling {
+  cursor: default;
 }
-.btn.btn-styling:hover{
- background-color: rgb(206, 206, 206);
+.btn.btn-styling:hover {
+  background-color: rgb(206, 206, 206);
 }
 .guide-wrapper {
   margin: 1rem 0;
 }
 .list-wrapper {
   list-style: none;
+  color: var(--grey-color);
+}
+.fa-dot-circle {
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  color: var(--pri-color);
 }
 .list-wrapper li {
   margin: 0.5rem 0;
+  display: flex;
+  align-items: baseline;
 }
