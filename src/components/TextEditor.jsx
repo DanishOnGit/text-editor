@@ -8,8 +8,11 @@ import { useState } from "react";
 import { Guide } from "./Guide";
 import { Menu } from "./Menu";
 
-export const TipTap = () => {
+export const TextEditor = () => {
   const [isWriting, setIsWriting] = useState(true);
+
+  //here we create an instance of the editor and use this throughout the app
+  //we also include other extensions apart from StarterKit
   const editor = useEditor({
     extensions: [StarterKit, Placeholder, Link, Image, Underline],
     autofocus: "end",
@@ -21,9 +24,14 @@ export const TipTap = () => {
   return (
     <>
       <div className="editor-wrapper">
-        <Menu editor={editor} isWriting={isWriting} setIsWriting={setIsWriting}/>
+        {/* Menu contains our text formatting options and guide */}
+        <Menu
+          editor={editor}
+          isWriting={isWriting}
+          setIsWriting={setIsWriting}
+        />
+        {/* here we toggle between EditorContent and guide depending on what user is viewing */}
         {isWriting ? <EditorContent editor={editor} /> : <Guide />}
-
       </div>
     </>
   );

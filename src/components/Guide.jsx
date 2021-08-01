@@ -7,7 +7,8 @@ export const Guide = () => {
           <span>
             {" "}
             To add/remove <b>bold</b> style, click on{" "}
-            <button className="btn btn-styling">B</button> (or use, ctrl/cmd + B)
+            <button className="btn btn-styling">B</button> (or use, ctrl/cmd +
+            B)
           </span>
         </li>
         <li>
@@ -17,8 +18,9 @@ export const Guide = () => {
             <b>
               <i>italic</i>
             </b>{" "}
-            style, click on {" "}
-            <button className=" btn btn-styling btn-italic"> I</button> (or use, ctrl/cmd + I)
+            style, click on{" "}
+            <button className=" btn btn-styling btn-italic"> I</button> (or use,
+            ctrl/cmd + I)
           </span>
         </li>
         <li>
@@ -30,7 +32,8 @@ export const Guide = () => {
               <u>underlined</u>
             </b>{" "}
             style, click on{" "}
-            <button className="btn btn-styling btn-underline"> U</button>  (or use, ctrl/cmd + U)
+            <button className="btn btn-styling btn-underline"> U</button> (or
+            use, ctrl/cmd + U)
           </span>
         </li>
         <li>

@@ -4,11 +4,13 @@ export const Modal = ({ editor, showModal, setShowModal, modalType }) => {
   const [url, setUrl] = useState("");
 
   const addUrl = () => {
+    //here we set the href as the Url value and then clear the input field and close modal
     editor.chain().setLink({ href: url }).focus().run();
     setUrl("");
     setShowModal("");
   };
   const addImage = () => {
+    //here we set the image src as the Url value and then clear the input field and close modal
     editor.chain().setImage({ src: url }).focus().run();
     setUrl("");
     setShowModal("");
