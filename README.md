@@ -48,7 +48,7 @@ https://user-images.githubusercontent.com/65118743/127772408-3ba7f2e6-1670-44f8-
 
    To delete the image, click on the image and press `delete` or `backspace` button on keyboard.
 
-To **reorder** your images, just drag and drop anywhere in the editor.
+    To **reorder** your images, just drag and drop anywhere in the editor.
 
 1. To add meme, type "**{{anykeyword_meme}}**" e.g.{{cat_meme}}, click on `+ Meme` button, meme will get added to the editor.
 
