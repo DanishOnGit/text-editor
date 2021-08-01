@@ -45,7 +45,7 @@ export const AddMemeBtn = ({ editor }) => {
         onClick={searchEditorContent}
       >
         <i class="fas fa-plus"></i> Meme
-        
+        <span className="tooltip-text">Add meme</span>
       </button>
     </>
   );

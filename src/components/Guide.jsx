@@ -7,7 +7,7 @@ export const Guide = () => {
           <span>
             {" "}
             To add/remove <b>bold</b> style, click on{" "}
-            <button className="btn btn-styling">B</button>
+            <button className="btn btn-styling">B</button> (or use, ctrl/cmd + B)
           </span>
         </li>
         <li>
@@ -18,7 +18,7 @@ export const Guide = () => {
               <i>italic</i>
             </b>{" "}
             style, click on {" "}
-            <button className=" btn btn-styling btn-italic"> I</button>
+            <button className=" btn btn-styling btn-italic"> I</button> (or use, ctrl/cmd + I)
           </span>
         </li>
         <li>
@@ -30,7 +30,7 @@ export const Guide = () => {
               <u>underlined</u>
             </b>{" "}
             style, click on{" "}
-            <button className="btn btn-styling btn-underline"> U</button>
+            <button className="btn btn-styling btn-underline"> U</button>  (or use, ctrl/cmd + U)
           </span>
         </li>
         <li>
@@ -60,7 +60,7 @@ export const Guide = () => {
             <button className="btn btn-styling">
               <i class="fas fa-image"></i>
             </button>{" "}
-            and then enter your desired url.
+            and then enter your desired Url
           </span>
         </li>
         <li>

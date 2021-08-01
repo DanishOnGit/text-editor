@@ -106,18 +106,22 @@
 .nav-wrapper {
   border-bottom: 1px solid var(--pri-color);
   text-align: left;
-  padding: 1rem 0;
+  padding: 0.25rem 0;
   margin-bottom: 2rem;
 }
 .brand {
   font-size: 3rem;
-}
-.fluid {
   color: var(--pri-color);
+  display: flex;
+  align-items: flex-start;
 }
-.editor {
-  color: var(--pri-color);
+.fluid{
+  display: inline-block;
+  height: 70px;
+  width: 80px;
+  text-align: left;
 }
+
 /* Formatting Buttons */
 .text-style-btns-wrapper {
   display: flex;
@@ -145,6 +149,7 @@
   font-size: 0.8rem;
   top: 2rem;
   left: 0;
+  white-space: nowrap;
   display: none;
   margin-top: 0.3rem;
   border-radius: 4px;

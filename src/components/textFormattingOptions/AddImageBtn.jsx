@@ -5,7 +5,7 @@ export const AddImageBtn = ({editor,setShowModal,setModalType}) => {
   };
   return (
     <button className="btn-styling" onClick={addImage}>
-     <i class="fas fa-image"></i>
+     <i class="fas fa-image"></i><span className="tooltip-text">Add image</span>
     </button>
   );
 };
